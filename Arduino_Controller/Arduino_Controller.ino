@@ -14,6 +14,26 @@ void setup()
 
 void loop() 
 {
+  char messageFromRaspberryPi = Serial.read();
+
+  if(messageFromRaspberryPi == '1')
+  {
+    analogWrite(greenLED, HIGH);
+    for(int i=1;i<=5;i++)
+    {
+        analogWrite(VibrationSensor, 300);
+        delay(100);
+        analogWrite(VibrationSensor, 0);
+        delay(100);
+        analogWrite(VibrationSensor, 300);
+        delay(100);
+        analogWrite(VibrationSensor, 0);
+        delay(100);
+        delay(1000);
+    }
+    analogWrite(greenLED, LOW);
+  }
+
   analogWrite(blueLED, HIGH);
   analogWrite(greenLED, LOW);
   int TouchSensorValue = digitalRead(TouchSensor);

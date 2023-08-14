@@ -1,8 +1,12 @@
+#include <SoftwareSerial.h>
+
 int TouchSensor = 3;
 int VibrationSensor = 4;
 
 int blueLED = 9;
 int greenLED = 10;
+
+SoftwareSerial BluetoothSerial (6,7);
 
 void setup() 
 {
@@ -10,6 +14,7 @@ void setup()
   pinMode(blueLED, OUTPUT);
   pinMode(greenLED, OUTPUT);
   Serial.begin(9600);
+  BluetoothSerial.begin(9600);
 }
 
 void loop() 
@@ -32,6 +37,7 @@ void loop()
         delay(1000);
     }
     analogWrite(greenLED, LOW);
+    BluetoothSerial.write("1");
   }
 
   analogWrite(blueLED, HIGH);

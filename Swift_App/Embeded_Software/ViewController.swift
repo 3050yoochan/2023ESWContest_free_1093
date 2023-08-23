@@ -45,7 +45,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             
             //Adding Request
-            // MARK: - identifier가 다 달라야만 Notification Grouping이 됩니닷..!!
+            // MARK: - identifier가 다 달라야만 Notification Grouping이 됩니다.
             let request = UNNotificationRequest(identifier: "\(index)timerdone", content: content, trigger: TimeIntervalTrigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

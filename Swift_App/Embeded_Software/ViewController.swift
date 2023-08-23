@@ -40,7 +40,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             content.summaryArgumentCount = 40
             
             //Setting time for notification trigger
-            //블로그 예제에서는 TimeIntervalNotificationTrigger을 사용했지만, UNCalendarNotificationTrigger사용법도 같이 올려놓을게요!
             //2. Use TimeIntervalNotificationTrigger
             let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             
